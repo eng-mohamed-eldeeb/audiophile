@@ -49,13 +49,12 @@ const Conent = styled.div`
   }
 `;
 
-const NewProduct = () => {
+const PremiumProduct = () => {
   return (
     <Box>
       <Main>
         <Img />
         <Conent>
-          <h4>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h4>
           <h2>ZX9 SPEAKER</h2>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
@@ -68,4 +67,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default PremiumProduct;

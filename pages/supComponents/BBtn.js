@@ -7,9 +7,11 @@ border-radius: 0;
 border: 0;
 background-color: #131313;
 color: #fff;
-padding: 1rem 1.7rem;
-width: 11rem;
+padding: .9rem 0;
+width: 9.5rem;
 position: relative;
+font-size: 14px;
+font-weight: 500;
 &::before {
     content: '';
     position: absolute;
@@ -21,7 +23,7 @@ position: relative;
     left: 0;
     transform-origin: top;
     transform: scaleY(0);
-    transition: transform .1s ease-in-out;
+    transition: transform .2s ease-in-out;
   }
   &:hover::before {
   transform-origin: top;
@@ -38,7 +40,7 @@ position: relative;
 
 const SeeBPro = () => {
     return (
-        <Btn ><span>SEE PRODUCT</span></Btn>
+        <Btn >SEE PRODUCT</Btn>
     )
 }
 
