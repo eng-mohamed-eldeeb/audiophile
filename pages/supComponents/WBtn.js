@@ -34,10 +34,10 @@ position: relative;
 }
 `
 
-const SeeWPro = () => {
+const WBtn = () => {
     return (
         <Btn >SEE PRODUCT</Btn>
     )
 }
 
-export default SeeWPro
+export default WBtn

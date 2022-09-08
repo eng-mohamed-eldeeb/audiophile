@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SeeBPro from "../pages/supComponents/BBtn";
+import BBtn from "../pages/supComponents/BBtn";
 
 const Box = styled.section`
   width: 100%;
@@ -60,7 +60,7 @@ const PremiumProduct = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <SeeBPro />
+          <BBtn />
         </Conent>
       </Main>
     </Box>

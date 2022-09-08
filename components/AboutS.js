@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SeeWPro from "../pages/supComponents/WBtn";
+import WBtn from "../pages/supComponents/WBtn";
 
 const Box = styled.section`
   width: 100%;

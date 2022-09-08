@@ -1,6 +1,6 @@
 import NavCard from "./NavCard";
 import styled from "styled-components";
-import NavLink from "next/link";
+import Link from "next/link";
 
 const Box = styled.div`
   width: 100%;
@@ -23,15 +23,15 @@ const NavCards = () => {
   return (
     <Box>
       <Main>
-        <NavLink href="/earphone">
+        <Link href="/earphone">
           <NavCard />
-        </NavLink>
-        <NavLink href="/headphone">
+        </Link>
+        <Link href="/headphone">
           <NavCard />
-        </NavLink>
-        <NavLink href="/speakers">
+        </Link>
+        <Link href="/speakers">
           <NavCard />
-        </NavLink>
+        </Link>
       </Main>
     </Box>
   );

@@ -38,10 +38,10 @@ font-weight: 500;
 }
 `
 
-const SeeBPro = () => {
+const BBtn = () => {
     return (
         <Btn >SEE PRODUCT</Btn>
     )
 }
 
-export default SeeBPro
+export default BBtn

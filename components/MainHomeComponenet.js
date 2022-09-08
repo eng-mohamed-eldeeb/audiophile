@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SeePro from './../pages/supComponents/TBtn';
+import TBtn from './../pages/supComponents/TBtn';
 
 const Box = styled.section`
 background-color: #191919;
@@ -52,7 +52,7 @@ return (
                 <h4>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h4>
                 <h2>XX99 MARK II HEADPHONES</h2>
                 <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                <SeePro />
+                <TBtn />
             </Conent>
             <img src='../img/mainHeadphone' width='50%' />
         </Main>

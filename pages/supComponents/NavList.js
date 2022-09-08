@@ -38,16 +38,6 @@ const NavList = () => {
               className={(isActive) =>
                 "hover" + (!isActive ? " bk" : "")
               }
-              href="/earphone"
-            >
-              earphone
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={(isActive) =>
-                "hover" + (!isActive ? " bk" : "")
-              }
               href="/headphone"
             >
               headphone
@@ -61,6 +51,16 @@ const NavList = () => {
               href="/speakers"
             >
               speakers
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={(isActive) =>
+                "hover" + (!isActive ? " bk" : "")
+              }
+              href="/earphone"
+            >
+              earphone
             </NavLink>
           </li>
         </List>

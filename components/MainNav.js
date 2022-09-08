@@ -9,10 +9,14 @@ const Main = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  h2{
+    font-size: 30px;
+  }
 `;
 
 const Box = styled.div`
-  background-color: #191919;
+  background-color: ${props => props.color};
   color: #fff;
   width: 100%;
   height: 6.3rem;
@@ -25,9 +29,9 @@ const Box = styled.div`
 
 
 
-const MainNav = () => {
+const MainNav = (props) => {
   return (
-    <Box>
+    <Box color={props.color}>
       <Main>
         <h2>audiophile</h2>
         <NavList />

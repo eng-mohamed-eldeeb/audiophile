@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SeeWPro from './../pages/supComponents/WBtn';
+import WBtn from './../pages/supComponents/WBtn';
 
 const Box = styled.section`
   width: 100%;
@@ -45,7 +45,7 @@ const RightToLeftC = () => {
       <Main>
         <Conent>
           <h2>ZX7 SPEAKER</h2>
-          <SeeWPro />
+          <WBtn />
         </Conent>
         <Img />
       </Main>

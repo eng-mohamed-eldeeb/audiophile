@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SeeWPro from '../pages/supComponents/WBtn';
+import WBtn from '../pages/supComponents/WBtn';
 
 const Box = styled.section`
   width: 100%;
@@ -8,14 +8,15 @@ const Box = styled.section`
 
 const Main = styled.div`
   width: 70rem;
-  background-color: #eaeaea;
-  height: 40vh;
+  height: 34vh;
+  background-color: #fff;
   border-radius: 10px;
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 
   @media (max-width: 78rem) {
     width: 90%;
@@ -23,19 +24,25 @@ const Main = styled.div`
 `;
 
 const Img = styled.img`
-  width: 30%;
-  height: 70%;
-`;
-const Conent = styled.div`
-  height: 55%;
   width: 50%;
+  height: 100%;
+  border-radius: 10px;
+`;
+const ProInfo = styled.div`
+  height: 100%;
+  width: 50%;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  padding: 6rem 2rem;
+
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: white;
   h2 {
     color: #000;
-    font-size: 55px;
+    font-size: 45px;
   }
 `;
 
@@ -44,10 +51,10 @@ const LeftToLRightC = () => {
     <Box>
       <Main>
         <Img />
-        <Conent>
+        <ProInfo>
           <h2>ZX7 SPEAKER</h2>
-          <SeeWPro />
-        </Conent>
+          <WBtn />
+        </ProInfo>
       </Main>
     </Box>
   );
