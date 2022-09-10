@@ -1,53 +1,44 @@
 import styled from "styled-components";
-import WBtn from './../pages/supComponents/WBtn';
+import WBtn from "./supComponents/WBtn";
+import { motion } from 'framer-motion';
 
-const Box = styled.section`
+const Box = styled(motion.section)`
   width: 100%;
   margin: 2rem 0;
 `;
 
 const Main = styled.div`
-  width: 70rem;
+  width: 69.48rem;
+  height: 34vh;
   background-color: #eaeaea;
-  height: 40vh;
+  background-image: url("https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-speaker-zx7.3d4940e8.jpg");
+  background-repeat: no-repeat;
   border-radius: 10px;
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  padding-left: 4rem;
+  align-items: flex-start;
 
   @media (max-width: 78rem) {
     width: 90%;
   }
-`;
-
-const Img = styled.img`
-  width: 30%;
-  height: 70%;
-`;
-const Conent = styled.div`
-  height: 55%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
   h2 {
     color: #000;
-    font-size: 55px;
+    font-size: 37px;
+    font-weight: 400;
   }
 `;
 
 const RightToLeftC = () => {
   return (
-    <Box>
+    <Box initial={{opacity: 0}} animate={{opacity:1}} transition={{delay: 1, duration: .7}}>
       <Main>
-        <Conent>
-          <h2>ZX7 SPEAKER</h2>
-          <WBtn />
-        </Conent>
-        <Img />
+        <h2>ZX7 SPEAKER</h2>
+        <WBtn />
       </Main>
     </Box>
   );

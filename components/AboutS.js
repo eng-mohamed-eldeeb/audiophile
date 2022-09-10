@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import WBtn from "../pages/supComponents/WBtn";
+import { motion } from 'framer-motion';
 
 const Box = styled.section`
   width: 100%;
@@ -19,13 +19,13 @@ const Main = styled.div`
   @media (max-width: 78rem) {
     width: 90%;
   }
-`;
-
-const Img = styled.img`
-  width: 50%;
+  img {
+    width: 50%;
   height: 70%;
   border-radius: 10px;
+  }
 `;
+
 const Conent = styled.div`
   height: 55%;
   width: 37%;
@@ -50,20 +50,20 @@ const AboutS = () => {
     <Box>
       <Main>
         <Conent>
-          <h2>
+          <motion.h2 initial={{opacity:0}} animate={{x: [-50,0], opacity: 1}} transition={{ delay: 2}}>
             BRINGING YOU THE
             <span> BEST</span> AUDIO GEAR
-          </h2>
-          <p>
+          </motion.h2>
+          <motion.p initial={{opacity: 0}} animate={{opacity:1}} transition={{delay: 2.5}}>
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio
             accessories. We have a large showroom and luxury demonstration rooms
             available for you to browse and experience a wide range of our
             products. Stop by our store to meet some of the fantastic people who
             make Audiophile the best place to buy your portable audio equipment.
-          </p>
+          </motion.p>
         </Conent>
-        <Img />
+        <img src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-best-gear.4d4a28e9.jpg" />
       </Main>
     </Box>
   );

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import TBtn from './../pages/supComponents/TBtn';
+import TBtn from './supComponents/TBtn';
+import { motion } from 'framer-motion';
 
 const Box = styled.section`
 background-color: #191919;
@@ -8,29 +9,35 @@ width: 100%;
 display: flex;
 justify-content:center;
 align-items: center;
+overflow: hidden;
 `
 
 const Main = styled.div`
 height: 90%;
 width: 58.5%;
 display: flex;
-justify-content: center;
+justify-content:flex-start;
 align-items: center;
-.div{
-    background-color: #000;
-    width:50%;
-    height: 50%;
+
+position: relative;
+
+img {
+    position: absolute;
+    top: 10;
+    left: 0;
+    transition: all 2 ease;
 }
 `
 
 const Conent = styled.div`
-height: 55%;
+height: 50%;
 width: 50%;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: left;
 color: white;
+z-index: 10;
 h4{
     color: #eaeaea4f;
 }
@@ -49,12 +56,12 @@ return (
     <Box>
         <Main>
             <Conent >
-                <h4>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h4>
-                <h2>XX99 MARK II HEADPHONES</h2>
-                <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                <motion.h4  animate={{ y: [-50, 0] }} transition={{ delay: -1, duration: 0.8}}>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</motion.h4>
+                <motion.h2 initial={{opacity:0}} animate={{x: [-50,0], opacity: 1}} transition={{ delay: .7,duration: 0.8}}>XX99 MARK II HEADPHONES</motion.h2>
+                <motion.p initial={{opacity: 0, x: 10}} animate={{opacity:1, x:0}} transition={{delay: 1.3,duration: 0.8}}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</motion.p>
                 <TBtn />
             </Conent>
-            <img src='../img/mainHeadphone' width='50%' />
+            <motion.img initial={{opacity:1}} animate={{opacity: [1,0,0,0,0,0,0,1,1,1,0,0,1,1,0,0,1]}} transition={{delay: 2.8,duration: 1}} src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-hero.55c18e98.jpg" />
         </Main>
     </Box>
 )

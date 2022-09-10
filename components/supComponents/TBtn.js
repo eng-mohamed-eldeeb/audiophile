@@ -3,25 +3,22 @@ import  styled  from 'styled-components';
 
 
 const Btn = styled.button`
-border: 1px solid #000;
-background-color: rgba(0,0,0,0);
-color: #000;
+border-radius: 0;
+border: 0;
+background-color: #d87d4a;
+color: #fff;
 padding: .9rem 0;
-width: 11rem;
+width: 9.5rem;
 position: relative;
+font-size: 14px;
+font-weight: 500;
+
 &::before {
-    content: 'SEE PRODUCT';
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    color: #fff;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    background-color: #eaeaea4f;
     bottom: 0;
     left: 0;
     transform-origin: top;
@@ -34,10 +31,10 @@ position: relative;
 }
 `
 
-const WBtn = () => {
+const TBtn = (props) => {
     return (
-        <Btn >SEE PRODUCT</Btn>
+        <Btn >{props.content ? props.content : 'SEE PRODUCT'}</Btn>
     )
 }
 
-export default WBtn
+export default TBtn

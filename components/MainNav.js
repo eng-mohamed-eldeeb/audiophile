@@ -1,7 +1,8 @@
-import NavList from "../pages/supComponents/NavList";
+import NavList from "./supComponents/NavList";
 import styled from "styled-components";
-import img from "../img/cartIcon.png";
-const Main = styled.nav`
+import Link from "next/link";
+// import { AiOutlineShoppingCart } from 'react-icons/fa'
+const  Main = styled.nav`
   width: 58.8%;
   min-width: 700px;
   height: 100%;
@@ -18,7 +19,7 @@ const Main = styled.nav`
 const Box = styled.div`
   background-color: ${props => props.color};
   color: #fff;
-  width: 100%;
+  width: 100vw;
   height: 6.3rem;
   display: flex;
   justify-content: space-around;
@@ -35,7 +36,10 @@ const MainNav = (props) => {
       <Main>
         <h2>audiophile</h2>
         <NavList />
-        <img src={img} alt="cart" />
+        {/* <AiOutlineShoppingCart /> */}
+        <Link href='/checkout'>
+          Cart
+        </Link>
       </Main>
     </Box>
   );

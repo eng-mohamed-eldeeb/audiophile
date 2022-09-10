@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavList from "./../pages/supComponents/NavList";
+import NavList from "./supComponents/NavList";
 import NavLink from "next/link";
 
 const Box = styled.footer`
@@ -29,6 +29,7 @@ const Side = styled.div`
   justify-content: space-evenly;
   align-items: flex-start;
 
+  position: relative;
   h3 {
     font-size: 30px;
     color: #fff;
@@ -48,6 +49,16 @@ const SocialIcons = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+`;
+
+const Line = styled.div`
+  height: 3px;
+  width: 6rem;
+  background-color: #d87d4a;
+
+  position: absolute;
+  top:0;
+  left: 0;
 `;
 
 const Footer = () => {
@@ -92,6 +103,7 @@ const Footer = () => {
             </NavLink>
           </SocialIcons>
         </Side>
+        <Line />
       </Main>
     </Box>
   );

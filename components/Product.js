@@ -1,32 +1,41 @@
 import styled from "styled-components";
-import TBtn from "./../pages/supComponents/TBtn";
-
-const Box = styled.section`
-  width: 100%;
+import TBtn from "./supComponents/TBtn";
+import { motion } from "framer-motion";
+const Box = styled(motion.section)`
   margin: 9.5rem 0;
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   width: 70rem;
   height: 57vh;
   background-color: #fff;
-  border-radius: 40px;
+  border-radius: 10px;
 
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  transition: all 0.4s ease;
   @media (max-width: 78rem) {
     width: 90%;
   }
+  .imgContainer {
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  img {
+    height: 100%;
+  }
+
+  &:hover {
+    box-shadow: 15px 15px 10px rgba(17, 17, 17, 0.51);
+    transform: translate(-15px, -15px);
+  }
 `;
 
-const Img = styled.img`
-  width: 50%;
-  height: 100%;
-  background-color: #eaeaea;
-`;
 const ProInfo = styled.div`
   height: 100%;
   width: 50%;
@@ -53,18 +62,20 @@ const ProInfo = styled.div`
   }
 `;
 
-
-const what = (itIs, newPro) => {
-  const newProd = NewPro => {
-    if(NewPro) {
-              return (<h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>)
-              } 
-              return null
-  }
+const what = (itIs, newPro, img) => {
+  const newProd = (NewPro) => {
+    if (NewPro) {
+      return <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>;
+    }
+    return null;
+  };
   if (itIs) {
     return (
-      <Main>
-        <Img />
+      <Main initial={{opacity:0}} animate={{opacity:1}}>
+        <div className="imgContainer">
+          <img src={img} />
+        </div>
+
         <ProInfo>
           {newProd(newPro)}
           <h2>ZX7 SPEAKER</h2>
@@ -79,26 +90,28 @@ const what = (itIs, newPro) => {
     );
   }
   return (
-      <Main>
-        <ProInfo>
+    <Main initial={{opacity:0}} animate={{opacity:1}}>
+      <ProInfo>
         {newProd(newPro)}
-          <h2>ZX7 SPEAKER</h2>
-          <p>
-            The new XX99 Mark II headphones is the pinnacle of pristine audio.
-            It redefines your premium headphone experience by reproducing the
-            balanced depth and precision of studio-quality sound.
-          </p>
-          <TBtn />
-        </ProInfo>
-        <Img />
-      </Main>
-    );
+        <h2>ZX7 SPEAKER</h2>
+        <p>
+          The new XX99 Mark II headphones is the pinnacle of pristine audio. It
+          redefines your premium headphone experience by reproducing the
+          balanced depth and precision of studio-quality sound.
+        </p>
+        <TBtn />
+      </ProInfo>
+      <div className="imgContainer">
+        <img src={img} />
+      </div>
+    </Main>
+  );
 };
 
 const Product = (props) => {
   return (
-    <Box>
-      {what(props.isIt, props.newPro)}
+    <Box >
+      {what(props.isIt, props.newPro, props.img)}
     </Box>
   );
 };
