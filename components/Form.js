@@ -237,7 +237,7 @@ const Form = () => {
               </div>
             </div>
           </Payment>
-          {mony ? (
+          {!mony ? (
             <p>
               The ‘Cash on Delivery’ option enables you to pay in cash when our
               delivery courier arrives at your residence. Just make sure your

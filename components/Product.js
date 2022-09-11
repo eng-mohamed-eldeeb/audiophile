@@ -7,7 +7,7 @@ const Box = styled(motion.section)`
 
 const Main = styled(motion.div)`
   width: 70rem;
-  height: 57vh;
+  height: 60.5vh;
   background-color: #fff;
   border-radius: 10px;
 

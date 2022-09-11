@@ -1,5 +1,8 @@
 
 import  styled  from 'styled-components';
+import { useRouter } from 'next/router';
+
+
 
 
 const Btn = styled.button`
@@ -23,7 +26,7 @@ font-weight: 500;
     left: 0;
     transform-origin: top;
     transform: scaleY(0);
-    transition: transform .5s ease-in-out;
+    transition: transform .2s ease-in-out;
   }
   &:hover::before {
   transform-origin: top;
@@ -32,15 +35,14 @@ font-weight: 500;
   color: #fff;
 
   }
-  span{
-    z-index: 3;
-  }
 }
 `
 
 const BBtn = (props) => {
+    const rout = useRouter()
+    
     return (
-        <Btn >{props.content ? props.content : 'SEE PRODUCT'}</Btn>
+        <Btn onClick={() => rout.push('/earphone')}>{props.content ? props.content : 'SEE PRODUCT'}</Btn>
     )
 }
 
