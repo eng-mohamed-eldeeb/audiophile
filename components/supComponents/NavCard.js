@@ -16,6 +16,8 @@ const Card = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
+
+  transition: all 0.3s ease;
   img {
     width: 80%;
   }
@@ -24,6 +26,10 @@ const Card = styled.div`
     font-size: 1.4rem;
     font-weight: 500;
 
+  }
+
+  &:hover p {
+    color: #d87d4a;
   }
 
 `;

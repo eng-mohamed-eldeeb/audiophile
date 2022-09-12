@@ -59,18 +59,19 @@ const Conent = styled.div`
   }
 `;
 
-const PremiumProduct = () => {
+const PremiumProduct = (props) => {
+  const data = props.data
   return (
     <Box>
       <Main>
         <motion.img initial={{opacity: 0}} animate={{y: [100,10], opacity:1}} transition={{delay:2, duration: .7}} src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-speaker-zx9.153cd899.png" />
         <Conent>
-          <h2>ZX9 <br/>SPEAKER</h2>
+          <h2>{data.name}</h2>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <BBtn />
+          <BBtn id={data.id}/>
         </Conent>
       </Main>
     </Box>

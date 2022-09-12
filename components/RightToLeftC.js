@@ -33,12 +33,13 @@ const Main = styled.div`
   }
 `;
 
-const RightToLeftC = () => {
+const RightToLeftC = (props) => {
+  const data = props.data
   return (
     <Box initial={{opacity: 0}} animate={{opacity:1}} transition={{delay: 1, duration: .7}}>
       <Main>
-        <h2>ZX7 SPEAKER</h2>
-        <WBtn />
+        <h2>{data.name}</h2>
+        <WBtn id={data.id} />
       </Main>
     </Box>
   );

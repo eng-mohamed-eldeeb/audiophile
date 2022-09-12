@@ -1,5 +1,6 @@
 
 import  styled  from 'styled-components';
+import { useRouter } from 'next/router';
 
 
 const Btn = styled.button`
@@ -32,8 +33,9 @@ font-weight: 500;
 `
 
 const TBtn = (props) => {
+    const rout = useRouter()
     return (
-        <Btn >{props.content ? props.content : 'SEE PRODUCT'}</Btn>
+        <Btn onClick={() => rout.push(`/${props.id}`)} >{props.content ? props.content : 'SEE PRODUCT'}</Btn>
     )
 }
 

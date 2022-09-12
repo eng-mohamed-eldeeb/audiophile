@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useRouter } from 'next/router';
 
 const Btn = styled.button`
   border: 1px solid #000;
@@ -45,9 +46,10 @@ const Btn = styled.button`
   }
 `;
 
-const WBtn = () => {
-  return (
-    <Btn>
+const WBtn = (props) => {
+    const rout = useRouter()
+    return (
+    <Btn onClick={() => rout.push(`/${props.id}`)}>
       <span>SEE PRODUCT</span>
     </Btn>
   );

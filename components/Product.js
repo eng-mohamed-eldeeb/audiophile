@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import TBtn from "./supComponents/TBtn";
 import { motion } from "framer-motion";
+
+
+
 const Box = styled(motion.section)`
   margin: 9.5rem 0;
 `;
@@ -62,7 +65,7 @@ const ProInfo = styled.div`
   }
 `;
 
-const what = (itIs, newPro, img) => {
+const what = (itIs,title, newPro, data) => {
   const newProd = (NewPro) => {
     if (NewPro) {
       return <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>;
@@ -73,18 +76,18 @@ const what = (itIs, newPro, img) => {
     return (
       <Main initial={{opacity:0}} animate={{opacity:1}}>
         <div className="imgContainer">
-          <img src={img} />
+          <img src={data.main_img} />
         </div>
 
         <ProInfo>
           {newProd(newPro)}
-          <h2>ZX7 SPEAKER</h2>
+          <h2>{data.name}<br/> {title}</h2>
           <p>
             The new XX99 Mark II headphones is the pinnacle of pristine audio.
             It redefines your premium headphone experience by reproducing the
             balanced depth and precision of studio-quality sound.
           </p>
-          <TBtn />
+          <TBtn id={data.id} />
         </ProInfo>
       </Main>
     );
@@ -93,16 +96,16 @@ const what = (itIs, newPro, img) => {
     <Main initial={{opacity:0}} animate={{opacity:1}}>
       <ProInfo>
         {newProd(newPro)}
-        <h2>ZX7 SPEAKER</h2>
+        <h2>{data.name}<br/>{title}</h2>
         <p>
           The new XX99 Mark II headphones is the pinnacle of pristine audio. It
           redefines your premium headphone experience by reproducing the
           balanced depth and precision of studio-quality sound.
         </p>
-        <TBtn />
+        <TBtn id={data.id} />
       </ProInfo>
       <div className="imgContainer">
-        <img src={img} />
+        <img src={data.main_img} />
       </div>
     </Main>
   );
@@ -111,7 +114,7 @@ const what = (itIs, newPro, img) => {
 const Product = (props) => {
   return (
     <Box >
-      {what(props.isIt, props.newPro, props.img)}
+      {what(props.isIt,props.Title, props.newPro, props.data)}
     </Box>
   );
 };

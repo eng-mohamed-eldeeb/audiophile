@@ -11,7 +11,6 @@ const Box = styled.div`
 `;
 
 const Main = styled.div`
-  width: 65%;
   height: 35vh;
   display: flex;
   align-items: center;

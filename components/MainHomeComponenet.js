@@ -51,15 +51,16 @@ p{
 
 
 
-const MainHomeComponenet = () => {
+const MainHomeComponenet = (props) => {
+    const data = props.data
 return (
     <Box>
         <Main>
             <Conent >
                 <motion.h4  animate={{ y: [-50, 0] }} transition={{ delay: -1, duration: 0.8}}>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</motion.h4>
-                <motion.h2 initial={{opacity:0}} animate={{x: [-50,0], opacity: 1}} transition={{ delay: .7,duration: 0.8}}>XX99 MARK II HEADPHONES</motion.h2>
+                <motion.h2 initial={{opacity:0}} animate={{x: [-50,0], opacity: 1}} transition={{ delay: .7,duration: 0.8}}>{data.name}</motion.h2>
                 <motion.p initial={{opacity: 0, x: 10}} animate={{opacity:1, x:0}} transition={{delay: 1.3,duration: 0.8}}>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</motion.p>
-                <TBtn />
+                <TBtn id={data.id}/>
             </Conent>
             <motion.img initial={{opacity:1}} animate={{opacity: [1,0,0,0,0,0,0,1,1,1,0,0,1,1,0,0,1]}} transition={{delay: 2.8,duration: 1}} src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-hero.55c18e98.jpg" />
         </Main>

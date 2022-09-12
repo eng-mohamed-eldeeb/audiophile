@@ -4,21 +4,17 @@ import Product from "./../components/Product";
 import NavCards from "../components/supComponents/NavCards";
 import AboutS from "../components/AboutS";
 import Footer from "../components/Footer";
+import data from "../assets/Data";
+
 const headphone = () => {
+  const title = "HEADPHONES";
   return (
     <>
       <MainNav color="#000" />
-      <HSubPageoComponent Title="HEADPHONES" />
-      <Product
-        isIt={true}
-        newPro={true}
-        img="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-xx99-mark-two.0f14e428.jpg"
-      />
-      <Product img="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-xx99-mark-one.3807b3ee.jpg" />
-      <Product
-        isIt={true}
-        img="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-xx59.77d41dad.jpg"
-      />
+      <HSubPageoComponent Title={title} />
+      <Product isIt={true} newPro={true} data={data[4]} Title={title} />
+      <Product data={data[5]} Title={title} />
+      <Product isIt={true} data={data[6]} Title={title} />
       <NavCards />
       <AboutS />
       <Footer />

@@ -1,7 +1,7 @@
-const pros = [
+const data = [
   {
-    id: "XX99 MARK II HEADPHONES",
-    name: "XX99 MARK II HEADPHONES",
+    id: 0,
+    name: "XX99 MARK II",
     discription:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     Price: 2999,
@@ -19,8 +19,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.431f9028.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.a88a2477.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.fec85b48.jpg']
   },
   {
-    id: "ZX9 SPEAKER",
-    name: "ZX9 SPEAKER",
+    id: 1,
+    name: "ZX9",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     Price: 4500,
     inBox: [
@@ -37,8 +37,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.5bad5c68.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.d0f0cdd1.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.0a0c0d0e.jpg']
   },
   {
-    id: "ZX7 SPEAKER",
-    name: "ZX7 SPEAKER",
+    id: 2,
+    name: "ZX7",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     Price: 3500,
     inBox: [
@@ -55,8 +55,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.50fbac0e.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.0aebac5c.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.51bc54ac.jpg']
   },
   {
-    id: "YX1 WIRELESS EARPHONES",
-    name: "YX1 WIRELESS EARPHONES",
+    id: 3,
+    name: "YX1",
     discription: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     Price: 599,
     inBox: [
@@ -73,8 +73,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.9a98eecc.jpg','','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.602806e7.jpg']
   },
   {
-    id: "XX99 MARK II HEADPHONES",
-    name: "XX99 MARK II HEADPHONES",
+    id: 4,
+    name: "XX99 MARK II",
     discription: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     Price: 2999,
     inBox: [
@@ -91,8 +91,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.431f9028.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.a88a2477.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.fec85b48.jpg']
   },
   {
-    id: "XX99 MARK I HEADPHONES",
-    name: "XX99 MARK I HEADPHONES",
+    id: 5,
+    name: "XX99 MARK I",
     discription: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     Price: 1750,
     inBox: [
@@ -109,8 +109,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.aa600570.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.988992ea.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.8f17771b.jpg']
   },
   {
-    id: "XX59 HEADPHONES",
-    name: "XX59 HEADPHONES",
+    id: 6,
+    name: "XX59",
     discription: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     Price: 899,
     inBox: [
@@ -127,8 +127,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.402d4e80.jpg','','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.70968a6f.jpg']
   },
   {
-    id: "ZX9 SPEAKER",
-    name: "ZX9 SPEAKER",
+    id: 7,
+    name: "ZX9",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     Price: 4500,
     inBox: [
@@ -145,8 +145,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.5bad5c68.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.d0f0cdd1.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.0a0c0d0e.jpg']
   },
   {
-    id: "ZX7 SPEAKER",
-    name: "ZX7 SPEAKER",
+    id: 8,
+    name: "ZX7",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     Price: 3500,
     inBox: [
@@ -163,8 +163,8 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.50fbac0e.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-2.0aebac5c.jpg','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.51bc54ac.jpg']
   },
   {
-    id: "YX1 WIRELESS EARPHONES",
-    name: "YX1 WIRELESS EARPHONES",
+    id: 9,
+    name: "YX1 WIRELESS",
     discription: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     Price: 699,
     inBox: [
@@ -181,3 +181,5 @@ const pros = [
     sup_imgs: ['https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-3.9a98eecc.jpg','','https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-gallery-1.602806e7.jpg']
   },
 ];
+
+export default data

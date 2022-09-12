@@ -42,7 +42,7 @@ const BBtn = (props) => {
     const rout = useRouter()
     
     return (
-        <Btn onClick={() => rout.push('/earphone')}>{props.content ? props.content : 'SEE PRODUCT'}</Btn>
+        <Btn onClick={() => rout.push(`/${props.id}`)}>{props.content ? props.content : 'SEE PRODUCT'}</Btn>
     )
 }
 
