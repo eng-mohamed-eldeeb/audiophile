@@ -6,7 +6,7 @@ const cartSlice = createSlice({
     items: [],
     totalQuantity: 0,
     VAT: 0,
-    changed: false,
+    // changed: false,
   },
   reducers: {
     replace(state, action) {
@@ -14,7 +14,7 @@ const cartSlice = createSlice({
       state.items = action.payload.items;
     },
     addItemToCart(state, action) {
-      state.changed = true;
+      // state.changed = true;
       const newItem = action.payload;
       const exisitiongItems = state.items.find(
         (item) => item.id === newItem.id
@@ -36,7 +36,7 @@ const cartSlice = createSlice({
     },
   },
   removeItemFromCart(state, action) {
-    state.changed = true;
+    // state.changed = true;
     const id = action.payload;
     const exisitiongItem = state.items.find((item) => item.id === id);
     if (state.totalQuantity > 0) {
@@ -51,6 +51,14 @@ const cartSlice = createSlice({
     }
     state.VAT = totalPrice / 5;
   },
+  removeAll(state, action) {
+    // state.items = [];
+    // state.totalPrice = 0;
+    // state.VAT = 0
+    // or?
+    state = this.initialState
+    
+  }
 });
 
 export const cart_action = cartSlice.actions;

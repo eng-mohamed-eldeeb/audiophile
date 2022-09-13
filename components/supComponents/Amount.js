@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+import { useState } from 'react';
 
 
 const Container = styled.div`
@@ -34,11 +35,13 @@ button:hover {
 
 
 const Amount = () => {
+    const [amount, setAmount] = useState(1);
+
     return (
         <Container>
-        <button >-</button>
-        <p>1</p>
-        <button >+</button>
+        <button onClick={amount > 1 ? () => setAmount(() => amount--) : null}>-</button>
+        <p>{amount}</p>
+        <button onClick={() => setAmount(() => amount++)}>+</button>
         </Container>
     )
 }

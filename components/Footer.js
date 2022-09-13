@@ -57,7 +57,7 @@ const Line = styled.div`
   background-color: #d87d4a;
 
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
 `;
 
@@ -79,27 +79,17 @@ const Footer = () => {
             <NavList />
           </div>
           <SocialIcons>
-            <NavLink
-              target="_blank"
-              href={{ pathname: "https://twitter.com/eldeeb_3o" }}
-            >
-              twitter
+            <NavLink href={{ pathname: "https://twitter.com/eldeeb_3o" }}>
+              <a target="_blank">twitter</a>
             </NavLink>
             <NavLink
               style={{ color: "inherit" }}
-              target="_blank"
               href={{ pathname: "https://github.com/eng-mohamed-eldeeb" }}
             >
-              Github
+              <a target="_blank">Github</a>
             </NavLink>
-            <NavLink
-              style={{ color: "inherit" }}
-              target="_blank"
-              href={{
-                pathname: "https://www.linkedin.com/in/eng-mohamed-eldeeb/",
-              }}
-            >
-              LinkedIn
+            <NavLink style={{ color: "inherit" }} target="_blank" href={{pathname:"https://www.linkedin.com/in/eng-mohamed-eldeeb/"}}>
+              <a target="_blank">LinkedIn</a>
             </NavLink>
           </SocialIcons>
         </Side>
