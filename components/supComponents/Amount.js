@@ -34,9 +34,9 @@ button:hover {
 
 
 
-const Amount = () => {
+const Amount = (props) => {
     const [amount, setAmount] = useState(1);
-
+    props.fun(amount)
     return (
         <Container>
         <button onClick={amount > 1 ? () => setAmount(() => amount--) : null}>-</button>

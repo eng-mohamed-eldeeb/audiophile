@@ -9,6 +9,35 @@ import NavCards from "./../components/supComponents/NavCards";
 import AboutS from "./../components/AboutS";
 import Footer from "./../components/Footer";
 import MaySeeCards from "../components/MaySeeCards";
+import { addItemToCart } from "../store/cart_slice";
+
+import { useState } from "react";
+
+const Container = styled.div`
+  width: 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f1f1f1;
+  button {
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    color: #d87d4a;
+  }
+
+  p {
+    color: #000;
+    font-size: large;
+    font-weight: 500;
+  }
+`;
 
 const MainContent = styled.div`
   padding-top: 10rem;
@@ -30,7 +59,6 @@ const Main = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   gap: 5rem;
-  /* align-items: center; */
 
   transition: all 0.4s ease;
   @media (max-width: 78rem) {
@@ -131,17 +159,14 @@ const Imgs = styled.div`
     flex-direction: column;
     gap: 2rem;
   }
-
-  div img {
-  }
 `;
 
 const ProductInfo = () => {
+  const [amount, setAmount] = useState(1);
   const product = data[parseInt(useRouter().query.id)];
   return (
     <>
       <MainNav color="#000" />
-      {/* <Container> */}
       <Main initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <a>go back</a>
         <MainContent>
@@ -149,13 +174,20 @@ const ProductInfo = () => {
             <img src={product.main_img} />
           </div>
           <ProInfo>
-            {/* {props.isNew ? <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5> : null} */}
             <h2>{product.name}</h2>
             <p>{product.discription}</p>
-            <h3>$ {product.Price}</h3>
+            <h3>$ {product.price}</h3>
             <div className="amoun_container">
-              <Amount />
-              <TBtn content="ADD TO CART" />
+              <Container>
+                <button
+                  onClick={amount > 1 ? () => setAmount(() => amount--) : null}
+                >
+                  -
+                </button>
+                <p>{amount}</p>
+                <button onClick={() => setAmount(() => amount++)}>+</button>
+              </Container>
+              <TBtn content="ADD TO CART" data={product} action={addItemToCart} amount={amount} />
             </div>
           </ProInfo>
         </MainContent>

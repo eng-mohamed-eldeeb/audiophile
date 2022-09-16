@@ -1,7 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import disableScroll from "disable-scroll";
 import BBtn from "./supComponents/BBtn";
+import store from "./../store/index";
+// import cartSlice, { removeAll } from '../store/cart_slice';
+import { useDispatch, useSelector } from "react-redux";
+import { removeAll } from "../store/cart_slice";
+import { useRouter } from 'next/router';
+import CartComponent from "./supComponents/CartComponent";
+import CartCheckout from './CartCheckout';
 
 const Div = styled.div`
   width: 100vw;
@@ -14,8 +21,6 @@ const Div = styled.div`
   justify-content: flex-end;
 
   div {
-    /* width: 100%;
-    height: 100%; */
     position: relative;
   }
 `;
@@ -79,33 +84,75 @@ const Main = styled.div`
   }
 `;
 
+const Items = styled.ul`
+  width: 100%;
+  background-color: #fdfdfd;
+  color: #131313;
+  padding: 2rem;
+  list-style: none;
+
+  /* height: 5rem; */
+ 
+  li {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+      font-size: large;
+    }
+  }
+  
+  `;
+
+
+const ItemInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  .name_price {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h5 {
+      font-size: 20px;
+    }
+    p{
+      font-size: 19px;
+      font-weight: 500;
+      color: rgba(1,1,1,.3)
+      
+    }
+    
+  }
+  img {
+    height: 5rem;
+    border-radius: 10px;
+  }
+  `
+
+
 const Cart = (props) => {
+  // const state = useSelector(state => state.reducer)
   useEffect(() => {
     disableScroll.on();
     return function cleanup() {
       disableScroll.off();
     };
-  });
+  }),[];
+  
+
+  
+
+
 
   return (
     <Div>
       <div>
-        <Box>
-          <Btns>
-            <button className="removeAll">REMOVE ALL</button>
-            <button onClick={props.fun}>x</button>
-          </Btns>
-          {/* items */}
-          <Main>
-            <div className="total">
-              <p>total</p>
-              <h4>$ 0</h4>
-            </div>
-            <div className="cart_btn">
-              <h3>NO ITEMS IN THIS LIST</h3>
-            </div>
-          </Main>
-        </Box>
+        <CartComponent fun={props.fun}/>
       </div>
     </Div>
   );

@@ -96,7 +96,7 @@ const Footer = () => {
         <Line />
       </Main>
     </Box>
-  );
-};
+  )
+}
 
 export default Footer;

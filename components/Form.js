@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
-import CheckoutCart from './CheckoutCart';
 
 const Contaioner = styled.div`
-  width: 100vw;
-  padding: 10rem 0 5rem 0;
   background-color: #f1f1f1;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
-  gap: 3rem;
 `;
 
 const Box = styled.div`
@@ -228,7 +224,6 @@ const Form = () => {
                   value="none"
                   id="Cash"
                   name="payment"
-                  
                   required
                 />
                 <label for="Cash" class="radio">
@@ -273,7 +268,6 @@ const Form = () => {
           )}
         </Main>
       </Box>
-      <CheckoutCart />
     </Contaioner>
   );
 };

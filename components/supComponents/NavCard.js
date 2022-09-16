@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
+import useAnimateInView from './../Hooks/useAnimateInView';
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   height: 100%;
   width: 340px;
   background-size: 64%;
@@ -34,10 +35,20 @@ const Card = styled.div`
 
 `;
 
+const imgBoxVariant = {
+  visible: { opacity: 1,rotateY: 0, transition: {duration: .5, type: 'spring' } },
+  hidden: { opacity: 0, rotateY: -90  }
+  };
+
 const NavCard = (props) => {
+  const [ref, control] = useAnimateInView()
+
   return (
     <Card
-      
+    ref={ref}
+    variants={imgBoxVariant}
+    initial="hidden"
+    animate={control}
     >
       <motion.img whileHover={{ scale: [null, 0.9, 1.1, 1] }}
       transition={{ duration: 0.3 }} src={props.img} />

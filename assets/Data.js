@@ -4,7 +4,7 @@ const data = [
     name: "XX99 MARK II",
     discription:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
-    Price: 2999,
+    price: 2999,
     inBox: [
       { q: 1, Init: "Headphone Unit" },
       { q: 2, Init: "Replacement Earcups" },
@@ -22,7 +22,7 @@ const data = [
     id: 1,
     name: "ZX9",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-    Price: 4500,
+    price: 4500,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -40,7 +40,7 @@ const data = [
     id: 2,
     name: "ZX7",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-    Price: 3500,
+    price: 3500,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -58,7 +58,7 @@ const data = [
     id: 3,
     name: "YX1",
     discription: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
-    Price: 599,
+    price: 599,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -76,7 +76,7 @@ const data = [
     id: 4,
     name: "XX99 MARK II",
     discription: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
-    Price: 2999,
+    price: 2999,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -94,7 +94,7 @@ const data = [
     id: 5,
     name: "XX99 MARK I",
     discription: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
-    Price: 1750,
+    price: 1750,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -112,7 +112,7 @@ const data = [
     id: 6,
     name: "XX59",
     discription: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-    Price: 899,
+    price: 899,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -130,7 +130,7 @@ const data = [
     id: 7,
     name: "ZX9",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-    Price: 4500,
+    price: 4500,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -148,7 +148,7 @@ const data = [
     id: 8,
     name: "ZX7",
     discription: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-    Price: 3500,
+    price: 3500,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },
@@ -166,7 +166,7 @@ const data = [
     id: 9,
     name: "YX1 WIRELESS",
     discription: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
-    Price: 699,
+    price: 699,
     inBox: [
         { q: 2, Init: "Speaker Unit" },
         { q: 2, Init: "Speaker Cloth Panel" },

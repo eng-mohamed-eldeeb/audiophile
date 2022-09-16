@@ -1,7 +1,6 @@
 import NavCard from "./NavCard";
 import styled from "styled-components";
 import Link from "next/link";
-import { motion } from "framer-motion";
 const Box = styled.div`
   width: 100%;
   padding: 13vh;
@@ -16,6 +15,11 @@ const Main = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 2.4rem;
+
+  @media (max-width: 75rem) {
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 const NavCards = () => {

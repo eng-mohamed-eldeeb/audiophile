@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TBtn from './supComponents/TBtn';
 import BBtn from './supComponents/BBtn';
+import Cart from './Cart';
 const Box = styled.div`
   padding: 3rem;
   border-radius: 10px;
@@ -10,7 +11,7 @@ const Box = styled.div`
 const CheckoutCart = () => {
   return (
     <Box>
-      <BBtn content="BACK TO PURCHASE" />
+      <Cart />
     </Box>
   );
 };

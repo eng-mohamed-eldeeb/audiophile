@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import WBtn from "./supComponents/WBtn";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import useAnimateInView from "./Hooks/useAnimateInView";
 
 const Box = styled(motion.section)`
   width: 100%;
@@ -12,6 +13,7 @@ const Main = styled.div`
   height: 34vh;
   background-color: #eaeaea;
   background-image: url("https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-speaker-zx7.3d4940e8.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
   margin: 0 auto;
@@ -32,11 +34,19 @@ const Main = styled.div`
     font-weight: 400;
   }
 `;
+const boxVariant = {
+  visible: {
+    opacity: 1,
+    transition: { delay: 0.3, duration: 2, type: "spring" },
+  },
+  hidden: { opacity: 0 },
+};
 
 const RightToLeftC = (props) => {
-  const data = props.data
+  const [ref, control] = useAnimateInView();
+  const data = props.data;
   return (
-    <Box initial={{opacity: 0}} animate={{opacity:1}} transition={{delay: 1, duration: .7}}>
+    <Box ref={ref} variants={boxVariant} initial="hidden" animate={control}>
       <Main>
         <h2>{data.name}</h2>
         <WBtn id={data.id} />

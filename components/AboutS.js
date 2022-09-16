@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import useAnimateInView from "./Hooks/useAnimateInView";
 
 const Box = styled.section`
   width: 100%;
@@ -18,16 +19,22 @@ const Main = styled.div`
 
   @media (max-width: 78rem) {
     width: 90%;
+    height: auto;
+    flex-direction: column-reverse;
+    text-align: center;
+    img {
+      height: 30rem;
+    }
   }
   img {
-    width: 50%;
-  height: 70%;
-  border-radius: 10px;
+    width: 37rem;
+    height: 80%;
+    border-radius: 10px;
   }
 `;
 
 const Conent = styled.div`
-  height: 55%;
+  height: 80%;
   width: 37%;
   display: flex;
   flex-direction: column;
@@ -43,18 +50,50 @@ const Conent = styled.div`
   p {
     color: #a2a2a2;
   }
+  @media (max-width: 78rem) {
+    width: 90%;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
 `;
 
+const imgBoxVariant = {
+  visible: { opacity: 1,rotateY: 0, transition: {  duration: 2, type: 'spring' } },
+  hidden: { opacity: 0, rotateY: -90  }
+  };
+const pBoxVariant = {
+  visible: { opacity: 1, transition: {   duration: 2, type: 'spring' } },
+  hidden: { opacity: 0}
+  };
+const hBoxVariant = {
+  visible: { opacity: 1, transition: {   duration: 2, type: 'spring' } },
+  hidden: { x: [-50, 0], opacity: 0}
+  };
+
 const AboutS = () => {
+  
+
+  const [ref, control] = useAnimateInView()
+
+  
+
   return (
     <Box>
       <Main>
         <Conent>
-          <motion.h2 initial={{opacity:0}} animate={{x: [-50,0], opacity: 1}} transition={{ delay: 2}}>
+          <motion.h2
+            iref={ref}
+            variants={hBoxVariant}
+            initial="hidden"
+            animate={control}
+          >
             BRINGING YOU THE
             <span> BEST</span> AUDIO GEAR
           </motion.h2>
-          <motion.p initial={{opacity: 0}} animate={{opacity:1}} transition={{delay: 2.5}}>
+          <motion.p ref={ref}
+          variants={pBoxVariant}
+          initial="hidden"
+          animate={control} >
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio
             accessories. We have a large showroom and luxury demonstration rooms
@@ -63,7 +102,13 @@ const AboutS = () => {
             make Audiophile the best place to buy your portable audio equipment.
           </motion.p>
         </Conent>
-        <img src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-best-gear.4d4a28e9.jpg" />
+        <motion.img
+          ref={ref}
+          variants={imgBoxVariant}
+          initial="hidden"
+          animate={control}
+          src="https://a331998513.github.io/audiophile-ecommerce-website/static/media/image-best-gear.4d4a28e9.jpg"
+        />
       </Main>
     </Box>
   );

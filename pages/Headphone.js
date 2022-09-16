@@ -13,7 +13,7 @@ const headphone = () => {
       <MainNav color="#000" />
       <HSubPageoComponent Title={title} />
       <Product isIt={true} newPro={true} data={data[4]} Title={title} />
-      <Product data={data[5]} Title={title} />
+      <Product isIt={false} data={data[5]} Title={title} />
       <Product isIt={true} data={data[6]} Title={title} />
       <NavCards />
       <AboutS />

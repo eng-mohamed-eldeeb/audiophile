@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import TBtn from "./supComponents/TBtn";
 import { motion } from "framer-motion";
-
-
+import useAnimateInView from "./Hooks/useAnimateInView";
 
 const Box = styled(motion.section)`
   margin: 9.5rem 0;
@@ -27,6 +26,9 @@ const Main = styled(motion.div)`
     width: 40%;
     height: 100%;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
   img {
@@ -65,56 +67,72 @@ const ProInfo = styled.div`
   }
 `;
 
-const what = (itIs,title, newPro, data) => {
-  const newProd = (NewPro) => {
-    if (NewPro) {
-      return <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>;
-    }
-    return null;
-  };
-  if (itIs) {
-    return (
-      <Main initial={{opacity:0}} animate={{opacity:1}}>
-        <div className="imgContainer">
-          <img src={data.main_img} />
-        </div>
-
-        <ProInfo>
-          {newProd(newPro)}
-          <h2>{data.name}<br/> {title}</h2>
-          <p>
-            The new XX99 Mark II headphones is the pinnacle of pristine audio.
-            It redefines your premium headphone experience by reproducing the
-            balanced depth and precision of studio-quality sound.
-          </p>
-          <TBtn id={data.id} />
-        </ProInfo>
-      </Main>
-    );
-  }
-  return (
-    <Main initial={{opacity:0}} animate={{opacity:1}}>
-      <ProInfo>
-        {newProd(newPro)}
-        <h2>{data.name}<br/>{title}</h2>
-        <p>
-          The new XX99 Mark II headphones is the pinnacle of pristine audio. It
-          redefines your premium headphone experience by reproducing the
-          balanced depth and precision of studio-quality sound.
-        </p>
-        <TBtn id={data.id} />
-      </ProInfo>
-      <div className="imgContainer">
-        <img src={data.main_img} />
-      </div>
-    </Main>
-  );
+const boxVariant = {
+  visible: {
+    opacity: 1,
+    transition: {duration: 1, type: "spring" },
+  },
+  hidden: { opacity: 0 },
 };
 
 const Product = (props) => {
+  const [ref, control] = useAnimateInView();
+  const data = props.data;
   return (
-    <Box >
-      {what(props.isIt,props.Title, props.newPro, props.data)}
+    <Box>
+      {props.itIs ? (
+        <Main
+          ref={ref}
+          variants={boxVariant}
+          initial="hidden"
+          animate={control}
+        >
+          <div className="imgContainer">
+            <img src={data.main_img} />
+          </div>
+
+          <ProInfo>
+            {props.newPro ? (
+              <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>
+            ) : null}
+            <h2>
+              {data.name}
+              <br /> {props.title}
+            </h2>
+            <p>
+              The new XX99 Mark II headphones is the pinnacle of pristine audio.
+              It redefines your premium headphone experience by reproducing the
+              balanced depth and precision of studio-quality sound.
+            </p>
+            <TBtn id={data.id} />
+          </ProInfo>
+        </Main>
+      ) : (
+        <Main ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}>
+          <ProInfo>
+            {props.itIs ? (
+              <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>
+            ) : null}
+            <h2>
+              {data.name}
+              <br />
+              {props.title}
+            </h2>
+            <p>
+              The new XX99 Mark II headphones is the pinnacle of pristine audio.
+              It redefines your premium headphone experience by reproducing the
+              balanced depth and precision of studio-quality sound.
+            </p>
+            <TBtn id={data.id} />
+          </ProInfo>
+          <div className="imgContainer">
+            <img src={data.main_img} />
+          </div>
+        </Main>
+      )}
     </Box>
   );
 };
