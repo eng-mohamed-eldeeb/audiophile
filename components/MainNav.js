@@ -77,7 +77,7 @@ const MainNav = (props) => {
       ) : null}
       <Box color={props.color}>
         <Main>
-          <h2>audiophile دسك توب</h2>
+          <h2>audiophile desktop</h2>
           <NavList />
           <div className="cart">
             <AiOutlineShoppingCart
