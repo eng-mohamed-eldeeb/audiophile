@@ -118,7 +118,7 @@ const Form = () => {
           <h4>BILLING DETAILS</h4>
           <Pair>
             <div>
-              <label for="name">
+              <label htmlFor="name">
                 <h6>Name</h6>
               </label>
               <br />
@@ -130,7 +130,7 @@ const Form = () => {
               ></input>
             </div>
             <div>
-              <label for="email">
+              <label htmlFor="email">
                 <h6>Email Address</h6>
               </label>
               <br />
@@ -143,7 +143,7 @@ const Form = () => {
             </div>
           </Pair>
           <div className="MD">
-            <label for="phone">
+            <label htmlFor="phone">
               <h6>Phone Number</h6>
             </label>
             <br />
@@ -156,7 +156,7 @@ const Form = () => {
           </div>
           <h4>SHIPPING INFO</h4>
           <div className="All">
-            <label for="Address">
+            <label htmlFor="Address">
               <h6>Address</h6>
             </label>
             <br />
@@ -169,14 +169,14 @@ const Form = () => {
           </div>
           <Pair>
             <div>
-              <label for="zip">
+              <label htmlFor="zip">
                 <h6>zip code</h6>
               </label>
               <br />
               <input type="text" id="zip" name="zip" placeholder="1001"></input>
             </div>
             <div>
-              <label for="city">
+              <label htmlFor="city">
                 <h6>City</h6>
               </label>
               <br />
@@ -189,7 +189,7 @@ const Form = () => {
             </div>
           </Pair>
           <div className="MD">
-            <label for="city">
+            <label htmlFor="city">
               <h6>Country</h6>
             </label>
             <br />
@@ -213,7 +213,7 @@ const Form = () => {
                   name="payment"
                   required
                 />
-                <label for="e-Mony" class="radio">
+                <label htmlFor="e-Mony" className="radio">
                   e-mony
                 </label>
               </div>
@@ -226,7 +226,7 @@ const Form = () => {
                   name="payment"
                   required
                 />
-                <label for="Cash" class="radio">
+                <label htmlFor="Cash" className="radio">
                   Cash on Delievery
                 </label>
               </div>
@@ -241,7 +241,7 @@ const Form = () => {
           ) : (
             <Pair>
               <div>
-                <label for="EMonyNuber">
+                <label htmlFor="EMonyNuber">
                   <h6>e-Money Number</h6>
                 </label>
                 <br />
@@ -253,7 +253,7 @@ const Form = () => {
                 ></input>
               </div>
               <div>
-                <label for="ePin">
+                <label htmlFor="ePin">
                   <h6>e-Money Pin</h6>
                 </label>
                 <br />

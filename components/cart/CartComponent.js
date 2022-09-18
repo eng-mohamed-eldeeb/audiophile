@@ -161,7 +161,7 @@ const CartComponent = (props) => {
         </div>
         <div className="cart_btn">
           {state.totalQuantity === 0 ? (
-            <h3>'NO ITEMS IN THIS LIST'</h3>
+            <h3>&apos;NO ITEMS IN THIS LIST&apos;</h3>
           ) : (
             <button onClick={() => rout.push("./checkout")}>CHECKOUT</button>
           )}
