@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import disableScroll from "disable-scroll";
-import BBtn from "./supComponents/BBtn";
-import store from "./../store/index";
 // import cartSlice, { removeAll } from '../store/cart_slice';
 import { useDispatch, useSelector } from "react-redux";
-import { removeAll } from "../store/cart_slice";
+import { removeAll } from "../../store/cart_slice";
 import { useRouter } from 'next/router';
-import CartComponent from "./supComponents/CartComponent";
 import CartCheckout from './CartCheckout';
+import BBtn from './../supComponents/BBtn';
+import store from './../../store/index';
+import CartComponent from './CartComponent';
 
 const Div = styled.div`
   width: 100vw;

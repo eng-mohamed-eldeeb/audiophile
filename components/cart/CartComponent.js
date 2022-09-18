@@ -5,8 +5,8 @@ import disableScroll from "disable-scroll";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart, removeAll, removeItemFromCart } from "./../../store/cart_slice";
 import { useRouter } from "next/router";
-import BBtn from "./BBtn";
 import store from "./../../store/index";
+import BBtn from './../supComponents/BBtn';
 
 const Box = styled.div`
   height: 30rem;

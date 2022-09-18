@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import TBtn from './supComponents/TBtn';
+import TBtn from './../supComponents/TBtn';
 
 const Box = styled.div`
   min-height: 30rem;

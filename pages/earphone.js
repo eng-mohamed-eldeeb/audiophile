@@ -1,10 +1,10 @@
 import MainNav from "./../components/MainNav";
 import HSubPageoComponent from "./../components/HSubPageoComponent";
-import Product from "./../components/Product";
-import NavCards from "../components/supComponents/NavCards";
 import AboutS from "./../components/AboutS";
 import Footer from "./../components/Footer";
 import data from "./../assets/Data";
+import Product from './../components/product/Product';
+import NavCards from './../components/supComponents/NavCards';
 
 const earphone = () => {
   const title = "EARPHONES";

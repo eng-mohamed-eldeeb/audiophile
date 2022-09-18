@@ -1,12 +1,12 @@
 import MainNav from '../components/MainNav';
 import MainHomeComponenet from './../components/MainHomeComponenet';
 import NavCards from '../components/supComponents/NavCards';
-import RightToLeftC from './../components/RightToLeftC';
-import LeftToLRightC from "../components/LeftToLRightC";
 import AboutS from './../components/AboutS';
 import Footer from './../components/Footer';
-import PremiumProduct from './../components/PremiumProduct';
-import data from '../assets/Data'
+import RightToLeftC from './../components/product/RightToLeftC';
+import LeftToLRightC from './../components/product/LeftToLRightC';
+import PremiumProduct from './../components/product/PremiumProduct';
+import data from './../assets/Data';
 
 
 function HomePage() {

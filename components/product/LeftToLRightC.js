@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import WBtn from "./supComponents/WBtn";
 import { motion } from 'framer-motion';
-import useAnimateInView from './Hooks/useAnimateInView';
+import WBtn from './../supComponents/WBtn';
+import useAnimateInView from './../Hooks/useAnimateInView';
 
 const Box = styled.section`
   width: 100%;

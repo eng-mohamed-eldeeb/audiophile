@@ -1,8 +1,8 @@
-import MainNav from "../components/MainNav";
 import Footer from "./../components/Footer";
-import Form from "../components/Form";
-import CartCheckout from "./../components/CartCheckout";
 import styled from "styled-components";
+import MainNav from './../components/MainNav';
+import Form from './../components/Form';
+import CartCheckout from './../components/cart/CartCheckout';
 
 const Contaner = styled.div`
   padding: 10rem 0 5rem 0;

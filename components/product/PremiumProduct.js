@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import BBtn from "./supComponents/BBtn";
 import { motion } from "framer-motion";
-import useAnimateInView from "./Hooks/useAnimateInView";
+import BBtn from './../supComponents/BBtn';
+import useAnimateInView from './../Hooks/useAnimateInView';
 
 const Box = styled(motion.section)`
   width: 100%;

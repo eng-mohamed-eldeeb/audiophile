@@ -2,8 +2,8 @@ import NavList from "./supComponents/NavList";
 import styled from "styled-components";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
-import Cart from "./Cart";
 import { useSelector } from 'react-redux';
+import Cart from './cart/Cart';
 
 const Main = styled.nav`
   width: 70rem;

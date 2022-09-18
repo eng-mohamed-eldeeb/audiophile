@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import TBtn from "./supComponents/TBtn";
 import { motion } from "framer-motion";
-import useAnimateInView from "./Hooks/useAnimateInView";
+import TBtn from './../supComponents/TBtn';
+import useAnimateInView from './../Hooks/useAnimateInView';
 
 const Box = styled(motion.section)`
   margin: 9.5rem 0;
