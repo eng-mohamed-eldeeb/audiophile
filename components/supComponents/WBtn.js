@@ -10,6 +10,7 @@ const Btn = styled(motion.button)`
   width: 9rem;
   height: 2.7rem;
   position: relative;
+  cursor: pointer;
 
   display: flex;
   align-items: center;

@@ -1,25 +1,18 @@
-import MainNav from "../components/MainNav";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import TBtn from "./../components/supComponents/TBtn";
-import { useRouter } from "next/router";
 import data from "../assets/Data";
-import Amount from "./../components/supComponents/Amount";
 import NavCards from "./../components/supComponents/NavCards";
-import AboutS from "./../components/AboutS";
-import Footer from "./../components/Footer";
 import MaySeeCards from "../components/MaySeeCards";
-import { addItemToCart } from "../store/cart_slice";
-
-import { useState } from "react";
+import { addItemToCart, loadCartState } from "../store/cart_slice";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div`
   width: 6rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background-color: #f1f1f1;
   button {
     padding: 1rem;
@@ -161,12 +154,15 @@ const Imgs = styled.div`
   }
 `;
 
-const ProductInfo = () => {
+const ProductInfo = (props) => {
   const [amount, setAmount] = useState(1);
-  const product = data[parseInt(useRouter().query.id)];
+  const product = props.data
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadCartState())
+  }, [])
   return (
     <>
-      <MainNav color="#000" />
       <Main initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <a>go back</a>
         <MainContent>
@@ -199,16 +195,16 @@ const ProductInfo = () => {
           <InBox>
             <h3>IN THE BOX</h3>
             <table>
-              {product.inBox.map((item) => (
-                <>
-                  <tr>
+              <tbody>
+                {product.inBox.map((item) => (
+                  <tr key={item.Init} >
                     <td>
                       <p className="q">{item.q}x</p>
                     </td>
-                    <td>{item.Init}</td>{" "}
+                    <td>{item.Init}</td>
                   </tr>
-                </>
-              ))}
+                ))}
+              </tbody>
             </table>
           </InBox>
         </FeatureAndInBox>
@@ -222,10 +218,18 @@ const ProductInfo = () => {
         <MaySeeCards />
         <NavCards />
       </Main>
-      <AboutS />
-      <Footer />
     </>
   );
 };
+export const getServerSideProps = async (context) => {
+  const id = context.query.id
+  const productData = data[id]
+  return {
+    props: {
+      data: productData
+    }
+  }
+
+}
 
 export default ProductInfo;

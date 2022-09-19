@@ -7,21 +7,27 @@ import RightToLeftC from './../components/product/RightToLeftC';
 import LeftToLRightC from './../components/product/LeftToLRightC';
 import PremiumProduct from './../components/product/PremiumProduct';
 import data from './../assets/Data';
-
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { loadCartState } from '../store/cart_slice';
 
 function HomePage() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadCartState())
+  }, [])
   return (
-    <>
-      <MainNav color="#191919" />
+    <main>
       <MainHomeComponenet data={data[0]} />
       <NavCards />
-      <PremiumProduct data= {data[1]} />
-      <RightToLeftC data= {data[2]}/>
-      <LeftToLRightC data= {data[3]}/>
-      <AboutS />
-      <Footer />
-    </>
+      <PremiumProduct data={data[1]} />
+
+      <RightToLeftC data={data[2]} />
+      <LeftToLRightC data={data[3]} />
+    </main>
   );
 }
+
+
 
 export default HomePage;

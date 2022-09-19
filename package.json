@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^1.8.5",
+    "babel-plugin-styled-components": "^2.0.7",
     "disable-scroll": "^0.6.0",
     "framer-motion": "^7.3.2",
     "next": "12.2.5",

@@ -4,6 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
 import Cart from './cart/Cart';
+import CartComponent from "./cart/CartComponent";
 
 const Main = styled.nav`
   width: 70rem;
@@ -67,12 +68,12 @@ const MainNav = (props) => {
     setCart(() => !cart);
   };
 
-  const amount = useSelector(state => state.reducer.totalQuantity)
+  const amount = useSelector(state => state.totalQuantity)
   return (
     <>
       {cart ? (
         <>
-          <Cart fun={disableCart} />
+          <CartComponent disableCart={disableCart} />
         </>
       ) : null}
       <Box color={props.color}>

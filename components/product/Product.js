@@ -23,6 +23,7 @@ const Main = styled(motion.div)`
     width: 90%;
   }
   .imgContainer {
+    order: ${(props) => props.order};
     width: 40%;
     height: 100%;
     border-radius: 10px;
@@ -44,7 +45,7 @@ const Main = styled(motion.div)`
 const ProInfo = styled.div`
   height: 100%;
   width: 50%;
-
+  order: ${(props) => props.order};
   display: flex;
   flex-direction: column;
   padding-left: 3rem;
@@ -70,7 +71,7 @@ const ProInfo = styled.div`
 const boxVariant = {
   visible: {
     opacity: 1,
-    transition: {duration: 1, type: "spring" },
+    transition: { duration: 1, type: "spring" },
   },
   hidden: { opacity: 0 },
 };
@@ -80,59 +81,36 @@ const Product = (props) => {
   const data = props.data;
   return (
     <Box>
-      {props.itIs ? (
-        <Main
-          ref={ref}
-          variants={boxVariant}
-          initial="hidden"
-          animate={control}
-        >
-          <div className="imgContainer">
-            <img src={data.main_img} />
-          </div>
 
-          <ProInfo>
-            {props.newPro ? (
-              <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>
-            ) : null}
-            <h2>
-              {data.name}
-              <br /> {props.title}
-            </h2>
-            <p>
-              The new XX99 Mark II headphones is the pinnacle of pristine audio.
-              It redefines your premium headphone experience by reproducing the
-              balanced depth and precision of studio-quality sound.
-            </p>
-            <TBtn id={data.id} />
-          </ProInfo>
-        </Main>
-      ) : (
-        <Main ref={ref}
+      <Main
+        order={props.isIt ? "1" : "2"}
+        ref={ref}
         variants={boxVariant}
         initial="hidden"
-        animate={control}>
-          <ProInfo>
-            {props.itIs ? (
-              <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>
-            ) : null}
-            <h2>
-              {data.name}
-              <br />
-              {props.title}
-            </h2>
-            <p>
-              The new XX99 Mark II headphones is the pinnacle of pristine audio.
-              It redefines your premium headphone experience by reproducing the
-              balanced depth and precision of studio-quality sound.
-            </p>
-            <TBtn id={data.id} />
-          </ProInfo>
-          <div className="imgContainer">
-            <img src={data.main_img} />
-          </div>
-        </Main>
-      )}
+        animate={control}
+      >
+        <div className="imgContainer">
+          <img src={data.main_img} />
+        </div>
+
+        <ProInfo
+          order={!props.isIt ? "1" : "2"}
+        >
+          {props.newPro ? (
+            <h5>N E W &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P R O D U C T</h5>
+          ) : null}
+          <h2>
+            {data.name}
+          </h2>
+          <p>
+            The new XX99 Mark II headphones is the pinnacle of pristine audio.
+            It redefines your premium headphone experience by reproducing the
+            balanced depth and precision of studio-quality sound.
+          </p>
+          <TBtn id={data.id} />
+        </ProInfo>
+      </Main>
+
     </Box>
   );
 };

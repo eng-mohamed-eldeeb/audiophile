@@ -66,7 +66,7 @@ const ItemInfo = styled.div`
 `;
 
 const CartCheckout = () => {
-  const data = useSelector((state) => state.reducer);
+  const data = useSelector((state) => state);
   const shipping = data.totalPrice > 0 ? 50 : 0;
   const grand_total = data.totalPrice + shipping + data.VAT;
   return (
@@ -92,7 +92,6 @@ const CartCheckout = () => {
         <li><h4>VAT (INCLUDED)</h4><p>$ {data.VAT}</p></li>
         <li className="grand_total"><h4>GRAND TOTAL</h4><p>$ {grand_total}</p></li>
       </Items>
-      <TBtn content="CONTINUE" />
     </Box>
   );
 };

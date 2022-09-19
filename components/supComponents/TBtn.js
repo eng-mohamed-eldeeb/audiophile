@@ -13,7 +13,7 @@ const Btn = styled(motion.button)`
   position: relative;
   font-size: 14px;
   font-weight: 500;
-
+  cursor: pointer;
   &::before {
     content: "";
     position: absolute;
@@ -42,7 +42,9 @@ const TBtn = (props) => {
     <Btn
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
       whileTap={{ scale: 0.9 }}
-      onClick={!props.action ? () => rout.push(`/${props.id}`) : () => addItem()}
+      onClick={
+        !props.action ? () => rout.push(`/${props.id}`) : () => addItem()
+      }
     >
       {props.content ? props.content : "SEE PRODUCT"}
     </Btn>

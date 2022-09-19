@@ -48,12 +48,12 @@ const Main = styled.form`
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 1rem;
-    margin-top: -10px;
     font-weight: 600;
   }
 
   input:focus {
     border: 1px solid #d87d4a;
+    outline: none;
   }
 
   .MD {
@@ -101,7 +101,6 @@ const Payment = styled.div`
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    align-items: center;
     display: flex;
     align-items: center;
     gap: 0.7rem;
@@ -193,12 +192,7 @@ const Form = () => {
               <h6>Country</h6>
             </label>
             <br />
-            <input
-              type="text"
-              id="Country"
-              name="Country"
-              placeholder="EGYBT"
-            ></input>
+            <input type="text" id="Country" name="Country" placeholder="EGYPT"></input>
           </div>
           <h4>PAYMENT DETAILS</h4>
           <Payment>
@@ -252,7 +246,7 @@ const Form = () => {
                   placeholder="981372465981"
                 ></input>
               </div>
-              <div>
+              <div >
                 <label htmlFor="ePin">
                   <h6>e-Money Pin</h6>
                 </label>

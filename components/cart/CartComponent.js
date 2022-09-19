@@ -1,67 +1,82 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import disableScroll from "disable-scroll";
-// import cartSlice, { removeAll } from '../store/cart_slice';
 import { useDispatch, useSelector } from "react-redux";
-import { addItemToCart, removeAll, removeItemFromCart } from "./../../store/cart_slice";
+import {
+  addASingleItemToCart,
+  addItemToCart,
+  removeAll,
+  removeItemFromCart,
+} from "./../../store/cart_slice";
 import { useRouter } from "next/router";
-import store from "./../../store/index";
-import BBtn from './../supComponents/BBtn';
+import { useEffect } from "react";
+import disableScroll from "disable-scroll";
+import { ImCross } from "react-icons/im";
+const Div = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
 
+  div {
+    position: relative;
+  }
+`;
 const Box = styled.div`
   height: 30rem;
   width: 25rem;
+  top: 10%;
+  right: 10%;
   background-color: #fdfdfd;
   border-radius: 10px;
-  position: absolute;
-  right: 100%;
-  top: 15%;
-
   overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  button {
-    padding: 0.5rem 1.3rem;
-
-    margin: 2rem;
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    border: none;
-    background-color: #eb1d36;
-    color: #fdfdfd;
-  }
 `;
 const Btns = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-
-  .removeAll {
-    background-color: #131313;
+  button {
+    padding: 0.5rem 1.3rem;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    border: none;
+  }
+  .red {
+    background-color: #eb1d36;
+    color: #fdfdfd;
+  }
+  .black {
+    background-color: #000;
+    color: #fff;
   }
 `;
 
 const Main = styled.div`
   align-self: flex-end;
   width: 100%;
-  .cart_btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 2rem 2rem 2rem;
-    padding: 1rem 0;
-    color: #fdfdfd;
-    background-color: #000;
-  }
+
   .total {
     width: 100%;
     display: flex;
     justify-content: space-between;
-
     padding: 2rem;
+  }
+  .checkout {
+    padding: 1rem 1.3rem;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    border: none;
   }
 `;
 
@@ -71,16 +86,34 @@ const Items = styled.ul`
   color: #131313;
   padding: 2rem;
   list-style: none;
-
   li {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     p {
       font-size: large;
+    }
+  }
+  .cartBtns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cartBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1.6rem;
+    outline: none;
+    border: 0;
+    border-radius: 0;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
     }
   }
 `;
@@ -110,11 +143,11 @@ const ItemInfo = styled.div`
 `;
 
 const CartComponent = (props) => {
-  const state = useSelector((state) => state.reducer);
-
+  const { items, totalQuantity, totalPrice } = useSelector((state) => state);
+  const { disableCart } = props;
   const dispatch = useDispatch();
 
-  const removeEmAll = () => {
+  const removeAllProducts = () => {
     dispatch(removeAll());
   };
 
@@ -123,51 +156,86 @@ const CartComponent = (props) => {
   };
 
   const addOne = (ob) => {
-    dispatch(addItemToCart(ob));
+    dispatch(addASingleItemToCart(ob));
   };
 
+  const router = useRouter();
+  useEffect(() => {
+    disableScroll.on();
+    return function cleanup() {
+      disableScroll.off();
+    };
+  }),
+    [];
 
-  const rout = useRouter();
   return (
-    <Box>
-      <Btns>
-        <button onClick={removeEmAll} className="removeAll">
-          REMOVE ALL
-        </button>
-        <button onClick={props.fun}>x</button>
-      </Btns>
-      <Items>
-        {state.items.map((i) => (
-          <li key={i.id}>
-            <ItemInfo>
-              <img src={i.main_img} />
-              <div className="name_price">
-                <h5>{i.name}</h5>
-                <p>$ {i.price}</p>
-              </div>
-            </ItemInfo>
-            <p>{i.quantity}</p>
-            <div>
-              <button onClick={() => removeOne(i.id)}>-</button>
-              <button onClick={() => addOne({newItem: i, amount: 1})}>+</button>
-            </div>
-          </li>
-        ))}
-      </Items>
-      <Main>
-        <div className="total">
-          <p>total</p>
-          <h4>$ {state.totalQuantity ? state.totalPrice : "0"}</h4>
-        </div>
-        <div className="cart_btn">
-          {state.totalQuantity === 0 ? (
-            <h3>&apos;NO ITEMS IN THIS LIST&apos;</h3>
-          ) : (
-            <button onClick={() => rout.push("./checkout")}>CHECKOUT</button>
+    <Div>
+      <Box>
+        <Btns>
+          {items.length > 0 && (
+            <button
+              style={{ cursor: "pointer" }}
+              onClick={removeAllProducts}
+              className="removeAll black"
+            >
+              REMOVE ALL
+            </button>
           )}
-        </div>
-      </Main>
-    </Box>
+          <button
+            className="red"
+            style={{ cursor: "pointer", marginLeft: "auto" }}
+            onClick={() => disableCart()}
+          >
+            <ImCross />
+          </button>
+        </Btns>
+        <Items>
+          {items.map((i) => (
+            <li key={i.id}>
+              <ItemInfo>
+                <img src={i.main_img} />
+                <div className="name_price">
+                  <h5>{i.name}</h5>
+                  <p>$ {i.price}</p>
+                </div>
+              </ItemInfo>
+              <p>{i.quantity}</p>
+              <div className="cartBtns">
+                <button className="cartBtn" onClick={() => removeOne(i.id)}>
+                  -
+                </button>
+                <button className="cartBtn" onClick={() => addOne(i.id)}>
+                  +
+                </button>
+              </div>
+            </li>
+          ))}
+        </Items>
+        <Main>
+          {items.length > 0 && (
+            <div className="total">
+              <p>total</p>
+              <h4>$ {totalQuantity ? totalPrice : "0"}</h4>
+            </div>
+          )}
+          <div>
+            {totalQuantity === 0 ? (
+              <h3 className="black checkout">NO ITEMS IN THIS LIST</h3>
+            ) : (
+              <button
+                className="black checkout"
+                onClick={() => {
+                  disableCart();
+                  router.push("./checkout");
+                }}
+              >
+                <span>CHECKOUT</span>
+              </button>
+            )}
+          </div>
+        </Main>
+      </Box>
+    </Div>
   );
 };
 

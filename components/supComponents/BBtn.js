@@ -12,6 +12,7 @@ const Btn = styled(motion.button)`
   position: relative;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
   &::before {
     content: "";
     position: absolute;

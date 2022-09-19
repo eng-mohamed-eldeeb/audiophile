@@ -1,22 +1,22 @@
-import MainNav from "../components/MainNav";
 import data from "../assets/Data";
-import Footer from '../components/Footer';
-import AboutS from '../components/AboutS';
 import NavCards from '../components/supComponents/NavCards';
 import Product from '../components/product/Product';
-import HSubPageoComponent from '../components/HSubPageoComponent';
+import Header from '../components/Header';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadCartState } from "../store/cart_slice";
 
 const speakers = () => {
-  const title = "SPEAKERS";
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadCartState())
+  }, [])
   return (
     <>
-      <MainNav color="#000" />
-      <HSubPageoComponent Title={title} />
-      <Product isIt={true} newPro={true} data={data[7]} Title={title} />
-      <Product data={data[8]} Title={title} />
+      <Header Title={"SPEAKERS"} />
+      <Product isIt={true} newPro={true} data={data[7]} />
+      <Product data={data[8]} />
       <NavCards />
-      <AboutS />
-      <Footer />
     </>
   );
 };

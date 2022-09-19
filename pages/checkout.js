@@ -3,6 +3,9 @@ import styled from "styled-components";
 import MainNav from './../components/MainNav';
 import Form from './../components/Form';
 import CartCheckout from './../components/cart/CartCheckout';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadCartState } from "../store/cart_slice";
 
 const Contaner = styled.div`
   padding: 10rem 0 5rem 0;
@@ -15,14 +18,17 @@ const Contaner = styled.div`
 `;
 
 function checkout() {
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadCartState())
+  }, [])
   return (
     <>
-      <MainNav color="#000" />
       <Contaner>
         <Form />
         <CartCheckout />
       </Contaner>
-      <Footer />
     </>
   );
 }
