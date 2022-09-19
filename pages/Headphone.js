@@ -11,9 +11,9 @@ import { loadCartState } from "../store/cart_slice";
 
 const headphone = () => {
   const title = "HEADPHONES";
-  const dispatch = useDispatch()
+  const Dispatch = useDispatch()
   useEffect(() => {
-    dispatch(loadCartState())
+    Dispatch(loadCartState())
   }, [])
   return (
     <>
