@@ -105,7 +105,7 @@ const Items = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-
+    cursor: pointer;
     width: 1.6rem;
     outline: none;
     border: 0;
