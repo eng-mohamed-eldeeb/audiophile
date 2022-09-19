@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { loadCartState } from "../store/cart_slice";
 
-const headphone = () => {
+const Headphone = () => {
   const title = "HEADPHONES";
   const Dispatch = useDispatch()
   useEffect(() => {
@@ -26,4 +26,4 @@ const headphone = () => {
   );
 };
 
-export default headphone;
+export default Headphone;

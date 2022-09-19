@@ -17,7 +17,7 @@ const Contaner = styled.div`
   align-items: flex-start;
 `;
 
-function checkout() {
+function Checkout() {
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -33,4 +33,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;

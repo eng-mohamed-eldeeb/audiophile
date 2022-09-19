@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { loadCartState } from "../store/cart_slice";
 
-const speakers = () => {
+const Speakers = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadCartState())
@@ -21,4 +21,4 @@ const speakers = () => {
   );
 };
 
-export default speakers;
+export default Speakers;
