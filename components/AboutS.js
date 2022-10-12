@@ -5,6 +5,10 @@ import useAnimateInView from "./Hooks/useAnimateInView";
 const Box = styled.section`
   width: 100%;
   margin: 2rem 0;
+  @media (max-width: 50rem) {
+    display: none;
+    
+  }
 `;
 
 const Main = styled.div`
@@ -17,7 +21,7 @@ const Main = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 78rem) {
+  @media (max-width: 90rem) {
     width: 90%;
     height: auto;
     flex-direction: column-reverse;
@@ -26,11 +30,21 @@ const Main = styled.div`
       height: 30rem;
     }
   }
+  @media (max-width: 50rem) {
+    width: 30rem;
+    height: auto;
+    flex-direction: column-reverse;
+    text-align: center;
+    img {
+      height: 20rem;
+    }
+  }
   img {
     width: 37rem;
     height: 80%;
     border-radius: 10px;
   }
+
 `;
 
 const Conent = styled.div`

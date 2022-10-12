@@ -21,8 +21,10 @@ const Main = styled.div`
 
   position: relative;
   overflow: hidden;
-  @media (max-width: 78rem) {
+  @media (max-width: 40rem) {
     width: 90%;
+    justify-content: center;
+    text-align: center;
   }
 
   img {

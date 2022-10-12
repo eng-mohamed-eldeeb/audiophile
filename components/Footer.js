@@ -6,17 +6,25 @@ const Box = styled.footer`
   width: 100%;
   height: 39.5vh;
   background-color: #101010;
+  @media (max-width: 60rem) {
+  height: 30rem;
+  }
 `;
 
 const Main = styled.div`
   height: 100%;
   width: 60%;
-
+  
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  @media (max-width: 60rem) {
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  }
 `;
 
 const Side = styled.div`
@@ -40,7 +48,15 @@ const Side = styled.div`
   div {
     align-self: flex-end;
   }
-`;
+@media (max-width: 50rem) {
+  width: 90%;
+  div {
+    width: 25rem;
+  }
+}
+
+  `;
+  
 
 const SocialIcons = styled.div`
   width: 14rem;

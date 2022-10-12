@@ -24,8 +24,6 @@ const Main = styled.div`
   position: relative;
 
   img {
-    top: 0%;
-    left: 0%;
     transition: all 2 ease;
     width: 100%;
     z-index: 0;
@@ -34,6 +32,19 @@ const Main = styled.div`
   @media (max-width: 75rem) {
     & {
       width: 90%;
+    }
+  }
+  @media (max-width: 60rem) {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 150%;
+        position: absolute;
+        top: 15%;
+        right: 0%;
+      }
     }
   }
 `;
@@ -56,6 +67,11 @@ const Conent = styled.div`
   }
   p {
     width: 80%;
+  }
+  @media (max-width: 55rem) {
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
   }
 `;
 
